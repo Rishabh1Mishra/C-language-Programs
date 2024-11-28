@@ -1,25 +1,28 @@
-/******************************************************************************
-
-                            Online C Compiler.
-                Code, Compile, Run and Debug C program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
-#include <stdio.h>
-
-int main()
-{ 
-    int a =5;
-    int b =6;
-    int c;
-    c=a;
-    b =a;
-   
-    
-    
-    
-    printf("%d",c);
-
-    return 0;
+#include<stdio.h>
+void swap(int*a,int*b){
+	int t=*a;
+	*a=*b;
+	*b=t;
+}
+	int main(){
+		int a[] ={1,0,1,0,1,0,1,0};
+		int n=sizeof(a)/sizeof(a[0]);
+		int b=0,h=n-1;
+		while(b<=h){
+			if(a[b]==0){
+				b++;
+			}
+		else if (a[h]==1){
+			h--;
+		}
+		else
+		{
+			swap(&a[b],&a[h]);
+			h--;
+			b++;
+		}
+	}
+	for(int i=0;i<n;i++){
+		printf("%d",a[i]);
+	}
 }
